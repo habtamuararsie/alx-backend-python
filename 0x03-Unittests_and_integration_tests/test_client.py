@@ -10,8 +10,9 @@ from urllib.error import HTTPError
 
 
 class TestGithubOrgClient(unittest.TestCase):
-    """ TESTCASE """
-    """ inputs to test the functionality """
+    """ TESTCASE inputs to test the functionality
+      """
+    
     @parameterized.expand([
         ("google"),
         ("abc"),
