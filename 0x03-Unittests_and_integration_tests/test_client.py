@@ -7,21 +7,14 @@ from parameterized import parameterized
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
 from urllib.error import HTTPError
-from typing import (
-    Mapping,
-    Sequence,
-    Any,
-    Dict,
-    Callable,
-)
+
 
 class TestGithubOrgClient(unittest.TestCase):
     """ TESTCASE inputs to test the functionality
       """
 
     @parameterized.expand([
-        ("google"),
-        ("abc"),
+        ("google"),   ("abc"),
     ])
     @patch("client.get_json", return_value={"payload": True})
     def test_org(self, org_name, mock_get):

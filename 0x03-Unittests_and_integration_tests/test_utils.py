@@ -4,7 +4,13 @@ import unittest
 from unittest.mock import patch
 from parameterized import parameterized
 from utils import access_nested_map, get_json, memoize
-
+from typing import (
+    Mapping,
+    Sequence,
+    Any,
+    Dict,
+    Callable,
+)
 
 class TestAccessNestedMap(unittest.TestCase):
     """ TESTCASE """
