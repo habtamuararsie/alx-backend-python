@@ -13,11 +13,14 @@ class TestGithubOrgClient(unittest.TestCase):
     """ TESTCASE inputs to test the functionality
       """
     
-    @parameterized.expand([
-        ("google"),
-        ("abc"),
-    ])
-    @patch("client.get_json", return_value={"payload": True})
+    @parameterized.expand(
+        [("google", {"google", True}), ("abc", {"abc", True})])
+    @patch('client.get_json')
+    # @parameterized.expand([
+    #     ("google"),
+    #     ("abc"),
+    # ])
+    # @patch("client.get_json", return_value={"payload": True})
     def test_org(self, org_name, mock_get):
         """ test that GithubOrgClient.org returns the correct value """
         test_client = GithubOrgClient(org_name)
