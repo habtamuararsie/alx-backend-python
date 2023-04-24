@@ -47,6 +47,7 @@ class TestGetJson(unittest.TestCase):
 
 class TestMemoize(unittest.TestCase):
     """ TESTCASE """
+    
     def test_memoize(self):
         """ Test that when calling a_property twice, the correct result is
             returned but a_method is only called once using assert_called_once
