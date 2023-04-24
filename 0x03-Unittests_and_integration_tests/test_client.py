@@ -12,14 +12,16 @@ from urllib.error import HTTPError
 class TestGithubOrgClient(unittest.TestCase):
     """ TESTCASE inputs to test the functionality
       """
-
+    
     @parameterized.expand([
         ("google"),   ("abc"),
     ])
     @patch("client.get_json", return_value={"payload": True})
+
     def test_org(self, org_name, mock_get):
         """ test that GithubOrgClient.org method 
           """
+        
         test_client = GithubOrgClient(org_name)
         test_return = test_client.org
         self.assertEqual(test_return, mock_get.return_value)
@@ -27,6 +29,7 @@ class TestGithubOrgClient(unittest.TestCase):
 
     def test_public_repos_url(self):
         """ to unit-test GithubOrgClient._public_repos_url """
+        
         with patch.object(GithubOrgClient,
                           "org",
                           new_callable=PropertyMock,
