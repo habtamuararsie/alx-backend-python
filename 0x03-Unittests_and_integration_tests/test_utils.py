@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-""" Module for testing utils """
-
+""" Module for testing utils 
+"""
 from parameterized import parameterized
 import unittest
 from unittest.mock import patch
@@ -9,7 +9,8 @@ import requests
 
 
 class TestAccessNestedMap(unittest.TestCase):
-    """ Class for Testing Access Nested Map """
+    """ Class for Testing Access Nested Map 
+    """
 
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
@@ -39,7 +40,8 @@ class TestGetJson(unittest.TestCase):
         ("http://holberton.io", {"payload": False})
     ])
     def test_get_json(self, test_url, test_payload):
-        """ Test that utils.get_json returns the expected result."""
+        """ Test that utils.get_json
+          returns the expected result."""
         config = {'return_value.json.return_value': test_payload}
         patcher = patch('requests.get', **config)
         mock = patcher.start()
