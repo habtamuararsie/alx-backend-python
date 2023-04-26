@@ -51,7 +51,8 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-    """ Class for Testing Memoize """
+    """ Class for Testing Memoize
+    """
 
     def test_memoize(self):
         """ Test that when calling a_property twice, the correct result
@@ -74,4 +75,3 @@ class TestMemoize(unittest.TestCase):
             test_class.a_property()
             test_class.a_property()
             mock.assert_called_once()
-            
