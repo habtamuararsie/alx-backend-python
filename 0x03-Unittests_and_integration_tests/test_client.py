@@ -72,6 +72,7 @@ class TestGithubOrgClient(unittest.TestCase):
     TEST_PAYLOAD
 )
 class TestIntegrationGithubOrgClient(unittest.TestCase):
+    
     """ Class for Integration test of fixtures """
 
     @classmethod
