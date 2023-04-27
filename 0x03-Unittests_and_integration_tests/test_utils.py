@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """ Module for testing utils 
 """
-
 import unittest
 from unittest.mock import patch
 from utils import (access_nested_map, get_json, memoize)
 from parameterized import parameterized
-import requests
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -19,7 +17,8 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
     def test_access_nested_map(self, nested_map, path, expected):
-        """ Test that the method returns what it is supposed to """
+        """ Test that the method returns what it is supposed to 
+        """
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
@@ -50,6 +49,7 @@ class TestGetJson(unittest.TestCase):
         mock.assert_called_once()
         patcher.stop()
 
+
 class TestMemoize(unittest.TestCase):
     """ Class for Testing Memoize """
 
@@ -61,7 +61,7 @@ class TestMemoize(unittest.TestCase):
 
         class TestClass:
             """ Test Class for wrapping with memoize """
-            
+
             def a_method(self):
                 return 42
 
