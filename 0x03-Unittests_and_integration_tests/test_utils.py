@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """ Module for testing utils 
 """
-from parameterized import parameterized
+
 import unittest
 from unittest.mock import patch
 from utils import (access_nested_map, get_json, memoize)
+from parameterized import parameterized
 import requests
 
 
