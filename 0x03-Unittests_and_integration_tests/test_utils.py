@@ -51,20 +51,24 @@ class TestGetJson(unittest.TestCase):
         patcher.stop()
 
 class TestMemoize(unittest.TestCase):
-    """ Class for Testing Memoize
-    """
+    """ Class for Testing Memoize """
+
     def test_memoize(self):
         """ Test that when calling a_property twice, the correct result
         is returned but a_method is only called once using
         assert_called_once
         """
+
         class TestClass:
+            """ Test Class for wrapping with memoize """
+            
             def a_method(self):
                 return 42
 
             @memoize
             def a_property(self):
                 return self.a_method()
+            
         with patch.object(TestClass, 'a_method') as mock:
             test_class = TestClass()
             test_class.a_property()
