@@ -50,7 +50,6 @@ class TestGetJson(unittest.TestCase):
         mock.assert_called_once()
         patcher.stop()
 
-
 class TestMemoize(unittest.TestCase):
     """ Class for Testing Memoize
     """
